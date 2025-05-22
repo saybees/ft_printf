@@ -6,7 +6,7 @@
 /*   By: sabrown <sabrown@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:55:51 by sabrown           #+#    #+#             */
-/*   Updated: 2025/05/21 22:16:55 by sabrown          ###   ########.fr       */
+/*   Updated: 2025/05/22 19:54:58 by sabrown          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int		ft_printf(const char *str, ... )
 {
-	
+	va_list paraminfo;
+	va_start (paraminfo, str);
 }

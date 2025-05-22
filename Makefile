@@ -1,4 +1,4 @@
-NAME = libft.a
+NAME = libftprintf.a
 
 AR = ar
 ARFLAGS = crs
@@ -9,9 +9,9 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm
 RMFLAG = -f
 
-INCLUDES =
+INCLUDES =	./ft_printf.h
 
-SRCS	=
+SRCS	=	ft_printf.c \
 
 OBJS = $(SRCS:.c=.o)
 
