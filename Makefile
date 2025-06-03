@@ -12,6 +12,8 @@ RMFLAG = -f
 INCLUDES =	./ft_printf.h
 
 SRCS	=	ft_printf.c \
+			ft_printf_char.c \
+			ft_printf_num.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -31,7 +33,4 @@ fclean : clean
 
 re : fclean all
 
-bonus : $(OBJS)
-		$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-
-.PHONY : all clean fclean re bonus
+.PHONY : all clean fclean re
