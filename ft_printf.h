@@ -6,7 +6,7 @@
 /*   By: sabrown <sabrown@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:55:56 by sabrown           #+#    #+#             */
-/*   Updated: 2025/06/04 21:22:38 by sabrown          ###   ########.fr       */
+/*   Updated: 2025/06/05 00:47:15 by sabrown          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <stdarg.h>
 
-int		ft_printf(const char *str, ... );
+int		ft_printf(const char *str, ...);
 int		check_type(char c, va_list args);
 int		print_c(char c);
 int		print_str(char *str);

@@ -12,19 +12,19 @@
 
 #include "ft_printf.h"
 
-int		print_c(char c)
+int	print_c(char c)
 {
 	write(1, c, 1);
 	return (1);
 }
 
-int		print_str(char *str)
+int	print_str(char *str)
 {
 	int		i;
 
 	i = 0;
 	if (!str)
-		return(print_str("(null)"));
+		return (print_str("(null)"));
 	while (str[i])
 	{
 		print_c(str[i]);

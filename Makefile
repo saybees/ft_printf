@@ -14,7 +14,6 @@ INCLUDES =	./ft_printf.h
 SRCS	=	ft_printf.c \
 			ft_printf_char.c \
 			ft_printf_num.c \
-			ft_printf_point.c \
 
 OBJS = $(SRCS:.c=.o)
 

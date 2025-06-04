@@ -6,13 +6,13 @@
 /*   By: sabrown <sabrown@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:55:51 by sabrown           #+#    #+#             */
-/*   Updated: 2025/06/04 20:44:30 by sabrown          ###   ########.fr       */
+/*   Updated: 2025/06/05 00:50:27 by sabrown          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		check_type(char c, va_list args)
+int	check_type(char c, va_list args)
 {
 	int		n;
 
@@ -36,12 +36,12 @@ int		check_type(char c, va_list args)
 	return (n);
 }
 
-int		ft_printf(const char *str, ... )
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
+	va_list	args;
 	int		i;
 	int		count;
-	
+
 	i = 0;
 	va_start(args, str);
 	if (!str)
