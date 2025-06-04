@@ -15,39 +15,75 @@
 int		print_num(int n)
 {
 	char	nb;
+	int		i;
 
+	i = 0;
 	if (n == -2147483648)
-	{
-		print_str("-2147483648");
-		return ;
-	}
+		return(print_str("-2147483648"));
 	if (n < 0)
 	{
 		n = -n;
+		i++;
 		print_c('-');
 	}
 	if (n >= 10)
-		print_num((n / 10));
+		i += print_num((n / 10));
 	nb = n % 10 + '0';
 	print_c(nb);
+	i++;
+	return (i);
 }
 
-int		print_unum()
+int		print_unum(unsigned int n)
 {
+	char	nb;
+	int		i;
 
+	i = 0;
+	if (n >= 10)
+		i += print_unum((n / 10));
+	nb = n % 10 + '0';
+	print_c(nb);
+	i++;
+	return (i);
 }
 
-int		print_lowhexa()
+int		print_lowhexa(long n)
 {
+	int		i;
+	char	*charset;
 
+	i = 0;
+	charset = "0123456789abcdef"
+	if (n < 0)
+	{
+		print_c('-');
+		n = -n;
+		i++:
+	}
+	if (n >= 16)
+		i += print_lowhexa((n / 16));
+	print_c(charset[n % 16]);
+	i++;
+	return (i);
 }
 
-int		print_uphexa()
+int		print_uphexa(long n)
 {
+	int		i;
+	char	*charset;
 
-}
-
-int		print_point(void *point)
-{
-
+	i = 0;
+	charset = "0123456789ABCDEF"
+	if (n < 0)
+	{
+		print_c('-');
+		n = -n;
+		i++:
+	}
+	if (n >= 16)
+		i += print_lowhexa((n / 16));
+	print_c(charset[n % 16]);
+	i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: sabrown <sabrown@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:55:51 by sabrown           #+#    #+#             */
-/*   Updated: 2025/06/04 01:17:39 by sabrown          ###   ########.fr       */
+/*   Updated: 2025/06/04 20:44:30 by sabrown          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int		check_type(char c, va_list args)
 	else if (c == 'd' || c == 'i')
 		n += print_num(va_arg(args, int));
 	else if (c == 'u')
-		n += print_unum(va_arg(args, int));
+		n += print_unum(va_arg(args, unsigned int));
 	else if (c == 'x')
-		n += print_lowhexa(va_arg(args, int));
+		n += print_lowhexa(va_arg(args, long));
 	else if (c == 'X')
-		n += print_uphexa(va_arg(args, int));
+		n += print_uphexa(va_arg(args, long));
 	else if (c == '%')
 		n += print_c('%');
 	return (n);
