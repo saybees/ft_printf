@@ -48,41 +48,32 @@ int	print_unum(unsigned int n)
 	return (i);
 }
 
-int	print_lowhexa(long n)
+int	print_hexa(unsigned int n, char c)
+{
+	int		i;
+	char	*charset;
+
+	i = 0;
+	if (c == 'x')
+		charset = "0123456789abcdef";
+	else
+		charset = "0123456789ABCDEF";
+	if (n >= 16)
+		i += print_hexa((n / 16), c);
+	print_c(charset[n % 16]);
+	i++;
+	return (i);
+}
+
+int	print_phexa(unsigned long n)
 {
 	int		i;
 	char	*charset;
 
 	i = 0;
 	charset = "0123456789abcdef";
-	if (n < 0)
-	{
-		print_c('-');
-		n = -n;
-		i++;
-	}
 	if (n >= 16)
-		i += print_lowhexa((n / 16));
-	print_c(charset[n % 16]);
-	i++;
-	return (i);
-}
-
-int	print_uphexa(long n)
-{
-	int		i;
-	char	*charset;
-
-	i = 0;
-	charset = "0123456789ABCDEF";
-	if (n < 0)
-	{
-		print_c('-');
-		n = -n;
-		i++;
-	}
-	if (n >= 16)
-		i += print_lowhexa((n / 16));
+		i += print_phexa((n / 16));
 	print_c(charset[n % 16]);
 	i++;
 	return (i);
@@ -91,13 +82,11 @@ int	print_uphexa(long n)
 int	print_point(void *point)
 {
 	int			i;
-	uintptr_t	ad;
 
 	i = 0;
-	ad = (uintptr_t)point;
-	if (!ad)
+	if (!point)
 		return (print_str("(nil)"));
 	i += print_str("0x");
-	i += print_lowhexa(ad);
+	i += print_phexa((unsigned long)point);
 	return (i);
 }

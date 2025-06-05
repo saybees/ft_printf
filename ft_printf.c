@@ -6,7 +6,7 @@
 /*   By: sabrown <sabrown@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 21:55:51 by sabrown           #+#    #+#             */
-/*   Updated: 2025/06/05 00:50:27 by sabrown          ###   ########.fr       */
+/*   Updated: 2025/06/05 15:32:55 by sabrown          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	check_type(char c, va_list args)
 	else if (c == 'u')
 		n += print_unum(va_arg(args, unsigned int));
 	else if (c == 'x')
-		n += print_lowhexa(va_arg(args, long));
+		n += print_hexa(va_arg(args, unsigned int), c);
 	else if (c == 'X')
-		n += print_uphexa(va_arg(args, long));
+		n += print_hexa(va_arg(args, unsigned int), c);
 	else if (c == '%')
 		n += print_c('%');
 	return (n);
@@ -42,6 +42,7 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		count;
 
+	count = 0;
 	i = 0;
 	va_start(args, str);
 	if (!str)
@@ -55,7 +56,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar(str[i]);
+			print_c(str[i]);
 			count++;
 		}
 		i++;
